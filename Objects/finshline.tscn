@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2vywu5phqp7l"]
+
+[ext_resource type="Texture2D" uid="uid://bq33yrfeqp4jt" path="res://textures/finish.png" id="1_bqvwx"]
+[ext_resource type="Script" uid="uid://dq36praffwi11" path="res://Objects/finshline.gd" id="2_n5ha7"]
+
+[node name="finishline" type="TextureRect" unique_id=1681315916]
+offset_right = 48.0
+offset_bottom = 384.0
+texture = ExtResource("1_bqvwx")
+stretch_mode = 1
+script = ExtResource("2_n5ha7")

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bhnl71eirgjw0"]
+
+[ext_resource type="Texture2D" uid="uid://bvoenpn6mrs32" path="res://textures/penquin.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bhsw3ppfdht3w" path="res://Player/player.gd" id="1_onrkg"]
+[ext_resource type="AudioStream" uid="uid://bifu7rs1qw1vq" path="res://audio/jump.wav" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://dgcfv4ynkb5ou" path="res://audio/double_jump.wav" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://cxgjoffu5xsv" path="res://audio/enter_menu.mp3" id="5_sweqy"]
+
+[sub_resource type="Curve" id="Curve_hqtel"]
+_data = [Vector2(0.01351352, 0.70786524), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_onrkg"]
+offsets = PackedFloat32Array(0.55737704, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Player" type="CharacterBody2D" unique_id=1617211177]
+z_index = 10
+collision_mask = 5
+floor_snap_length = 8.0
+script = ExtResource("1_onrkg")
+gem_boost = 2500.0
+coyote_time_amount = 0.1
+air_boost_amount = 400
+min_zoom_amount = 0.8
+death_y_threshold = 600.0
+
+[node name="Anchor" type="Marker2D" parent="." unique_id=1798905537]
+
+[node name="Sprite2D" type="Sprite2D" parent="Anchor" unique_id=728452734]
+position = Vector2(0, -5)
+texture = ExtResource("1_4flbx")
+offset = Vector2(0, -8)
+hframes = 2
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=819156989]
+offset = Vector2(64, -32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1966433523]
+scale = Vector2(-51.275833, 157.88812)
+polygon = PackedVector2Array(0.13651654, -0.0063335984, 0.13651654, -0.04433519, 0.07800946, -0.063335985, -0.15601891, -0.063335985, -0.15601891, -0.04433519)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=648461409]
+target_position = Vector2(0, 300)
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=1395134114]
+position = Vector2(-2, 0)
+emitting = false
+amount = 180
+fixed_fps = 30
+draw_order = 1
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, -1)
+spread = 89.471
+gravity = Vector2(0, 98)
+initial_velocity_min = 64.0
+initial_velocity_max = 128.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_hqtel")
+color_ramp = SubResource("Gradient_onrkg")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=862404796]
+stream = ExtResource("3_i3pqv")
+volume_db = 12.0
+attenuation = 0.0015864323
+
+[node name="DoubleJump" type="AudioStreamPlayer2D" parent="." unique_id=580153564]
+stream = ExtResource("4_hqtel")
+volume_db = 12.0
+attenuation = 0.0015864323
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=694205986]
+stream = ExtResource("5_sweqy")
+volume_db = 5.0
+attenuation = 1e-05
