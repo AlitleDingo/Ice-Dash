@@ -14,8 +14,7 @@ config/name="ice runner"
 config/tags=PackedStringArray("2d")
 run/main_scene="uid://c24xsod5wo7td"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-boot_splash/bg_color=Color(0.45490196, 0.5411765, 0.84313726, 0.61960787)
-boot_splash/image="uid://c16fliwcrlbo6"
+boot_splash/bg_color=Color(0.3089612, 0.63294876, 0.50699157, 0.61960787)
 config/icon="uid://c16fliwcrlbo6"
 config/windows_native_icon="res://icons/convertico-Gemini_Generated_Image_inxc7xinxc7xinxc.ico"
 

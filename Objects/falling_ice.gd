@@ -6,7 +6,7 @@ var is_falling: bool = false
 
 func _ready() -> void:
 	# Clean up signal connections via code
-	$detecor.body_entered.connect(_on_detector_body_entered)
+	$detector.body_entered.connect(_on_detector_body_entered)
 	$"is on floor".body_entered.connect(_on_floor_collider_body_entered)
 
 func _physics_process(delta: float) -> void:

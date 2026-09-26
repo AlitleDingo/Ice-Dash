@@ -73,8 +73,8 @@ polygon = PackedVector2Array(8, 192, 72, 168, 88, 160, 96, 176, 96, 216, 288, 19
 script = ExtResource("6_lvfll")
 
 [node name="Visable_collision_polygon_2d5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=729399363]
-position = Vector2(-328, -184)
-polygon = PackedVector2Array(3320, 280, 3384, 256, 3448, 200, 3480, 232, 3472, 256, 3456, 288, 3416, 320, 3584, 288, 3728, 416, 3664, 448, 3360, 480, 3352, 352)
+position = Vector2(-374, -183)
+polygon = PackedVector2Array(3322, 339, 3384, 256, 3480, 232, 3512, 245, 3513, 261, 3541, 285, 3584, 288, 3728, 416, 3664, 448, 3360, 480, 3319, 376)
 script = ExtResource("6_lvfll")
 metadata/_custom_type_script = "uid://wee2es8ym1ss"
 
@@ -103,25 +103,31 @@ script = ExtResource("6_lvfll")
 metadata/_custom_type_script = "uid://wee2es8ym1ss"
 
 [node name="Visable_collision_polygon_2d3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2019277292]
-position = Vector2(93, -23)
-polygon = PackedVector2Array(4104, 184, 4125, 162, 4165, 162, 4206, 175, 4252, 184, 4264, 208)
+position = Vector2(-139, 18)
+polygon = PackedVector2Array(4087, 221, 4084, 204, 4095, 184, 4125, 162, 4165, 162, 4206, 175, 4252, 184, 4261, 217, 4134, 215)
 script = ExtResource("6_lvfll")
 metadata/_custom_type_script = "uid://wee2es8ym1ss"
 
 [node name="Visable_collision_polygon_2d8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=397276512]
-position = Vector2(353, -13)
-polygon = PackedVector2Array(4104, 184, 4102, 121, 4168, 87, 4257, 133, 4288, 171, 4262, 224, 4164, 229)
+position = Vector2(339, 11)
+polygon = PackedVector2Array(4080, 186, 4079, 133, 4107, 101, 4138, 88, 4168, 87, 4212, 108, 4239, 118, 4257, 133, 4288, 171, 4262, 224, 4225, 241, 4164, 229, 4123, 231, 4090, 222)
+script = ExtResource("6_lvfll")
+metadata/_custom_type_script = "uid://wee2es8ym1ss"
+
+[node name="Visable_collision_polygon_2d8" type="CollisionPolygon2D" parent="StaticBody2D/Visable_collision_polygon_2d8" unique_id=1383863190]
+position = Vector2(231, 77)
+polygon = PackedVector2Array(4080, 186, 4079, 133, 4107, 101, 4138, 88, 4168, 87, 4212, 108, 4239, 118, 4257, 133, 4288, 171, 4262, 224, 4225, 241, 4164, 229, 4123, 231, 4090, 222)
 script = ExtResource("6_lvfll")
 metadata/_custom_type_script = "uid://wee2es8ym1ss"
 
 [node name="Visable_collision_polygon_2d4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1127189355]
-position = Vector2(648, -184)
-polygon = PackedVector2Array(3392, 192, 3394, 186, 3440, 144, 3488, 104, 3520, 80, 3552, 64, 3563, 81, 3576, 96, 3594, 90, 3616, 88, 3621, 106, 3616, 128, 3574, 137, 3520, 136, 3528, 168, 3488, 200, 3413, 199, 3399, 197)
+position = Vector2(-852, 49)
+polygon = PackedVector2Array(3442, 176, 3488, 174, 3523, 199, 3413, 199)
 script = ExtResource("6_lvfll")
 metadata/_custom_type_script = "uid://wee2es8ym1ss"
 
 [node name="falling_ice" parent="StaticBody2D" unique_id=871054556 instance=ExtResource("11_wvr33")]
-position = Vector2(3936, 56)
+position = Vector2(3672, 231)
 
 [node name="Player" parent="." unique_id=1617211177 instance=ExtResource("7_jcnlr")]
 position = Vector2(14, 188)
@@ -142,17 +148,11 @@ autoplay = true
 [node name="collecatlbe" parent="gems" unique_id=1132573697 instance=ExtResource("10_cuxq2")]
 position = Vector2(216, 184)
 
-[node name="collecatlbe2" parent="gems" unique_id=1483444371 instance=ExtResource("10_cuxq2")]
-position = Vector2(1776, -80)
-
 [node name="collecatlbe3" parent="gems" unique_id=1680476168 instance=ExtResource("10_cuxq2")]
 position = Vector2(664, 64)
 
-[node name="collecatlbe4" parent="gems" unique_id=131180698 instance=ExtResource("10_cuxq2")]
-position = Vector2(1904, -152)
-
 [node name="collecatlbe5" parent="gems" unique_id=1904623100 instance=ExtResource("10_cuxq2")]
-position = Vector2(1072, 72)
+position = Vector2(1074, 45)
 
 [node name="collecatlbe6" parent="gems" unique_id=1469093489 instance=ExtResource("10_cuxq2")]
 position = Vector2(1344, 48)
@@ -163,70 +163,26 @@ position = Vector2(1488, 56)
 [node name="collecatlbe8" parent="gems" unique_id=464800800 instance=ExtResource("10_cuxq2")]
 position = Vector2(1696, 24)
 
-[node name="collecatlbe9" parent="gems" unique_id=118542027 instance=ExtResource("10_cuxq2")]
-position = Vector2(1872, -88)
-
 [node name="collecatlbe10" parent="gems" unique_id=1191483661 instance=ExtResource("10_cuxq2")]
 position = Vector2(2248, 128)
 
 [node name="collecatlbe11" parent="gems" unique_id=1485153223 instance=ExtResource("10_cuxq2")]
 position = Vector2(2344, 144)
 
-[node name="collecatlbe12" parent="gems" unique_id=1953748616 instance=ExtResource("10_cuxq2")]
-position = Vector2(2248, -128)
-
-[node name="collecatlbe13" parent="gems" unique_id=444508671 instance=ExtResource("10_cuxq2")]
-position = Vector2(2992, 216)
-
 [node name="collecatlbe18" parent="gems" unique_id=1709596227 instance=ExtResource("10_cuxq2")]
 position = Vector2(4640, 296)
 
 [node name="collecatlbe14" parent="gems" unique_id=637736519 instance=ExtResource("10_cuxq2")]
-position = Vector2(3536, 152)
+position = Vector2(3528, 187)
 
 [node name="collecatlbe15" parent="gems" unique_id=1802783318 instance=ExtResource("10_cuxq2")]
-position = Vector2(3392, 208)
+position = Vector2(3107, 38)
 
 [node name="collecatlbe16" parent="gems" unique_id=1274978118 instance=ExtResource("10_cuxq2")]
-position = Vector2(3944, 160)
-
-[node name="collecatlbe17" parent="gems" unique_id=1638665328 instance=ExtResource("10_cuxq2")]
-position = Vector2(4224, 136)
-
-[node name="collecatlbe19" parent="gems" unique_id=239106571 instance=ExtResource("10_cuxq2")]
-position = Vector2(2608, 152)
-metadata/_scene_painted = true
-
-[node name="collecatlbe20" parent="gems" unique_id=1991684628 instance=ExtResource("10_cuxq2")]
-position = Vector2(2646.5464, 110.4949)
-metadata/_scene_painted = true
-
-[node name="collecatlbe21" parent="gems" unique_id=1040358951 instance=ExtResource("10_cuxq2")]
-position = Vector2(2692.7463, 58.794907)
-metadata/_scene_painted = true
-
-[node name="collecatlbe22" parent="gems" unique_id=493819992 instance=ExtResource("10_cuxq2")]
-position = Vector2(2746.6462, -0.60510254)
-metadata/_scene_painted = true
-
-[node name="collecatlbe23" parent="gems" unique_id=697781215 instance=ExtResource("10_cuxq2")]
-position = Vector2(2814.8462, -46.805115)
-metadata/_scene_painted = true
-
-[node name="collecatlbe24" parent="gems" unique_id=480318501 instance=ExtResource("10_cuxq2")]
-position = Vector2(2889.6462, -66.6051)
-metadata/_scene_painted = true
-
-[node name="collecatlbe25" parent="gems" unique_id=714018458 instance=ExtResource("10_cuxq2")]
-position = Vector2(2935.8462, -46.805115)
-metadata/_scene_painted = true
-
-[node name="collecatlbe26" parent="gems" unique_id=594866800 instance=ExtResource("10_cuxq2")]
-position = Vector2(2967.7463, -24.8051)
-metadata/_scene_painted = true
+position = Vector2(3834, 210)
 
 [node name="collecatlbe27" parent="gems" unique_id=1712841083 instance=ExtResource("10_cuxq2")]
-position = Vector2(3824, 16)
+position = Vector2(3672, 199)
 
 [node name="VictoryScreen" type="CanvasLayer" parent="." unique_id=1296033203]
 visible = false
@@ -277,7 +233,7 @@ flat = true
 position = Vector2(48, -128)
 
 [node name="falling_ice" parent="ice blocks" unique_id=570016827 instance=ExtResource("11_wvr33")]
-position = Vector2(1136, 240)
+position = Vector2(1021, 204)
 
 [node name="falling_ice2" parent="ice blocks" unique_id=714072192 instance=ExtResource("11_wvr33")]
 position = Vector2(1400, 240)
@@ -285,22 +241,16 @@ position = Vector2(1400, 240)
 [node name="falling_ice3" parent="ice blocks" unique_id=1681665934 instance=ExtResource("11_wvr33")]
 position = Vector2(1688, 240)
 
-[node name="falling_ice4" parent="ice blocks" unique_id=687876041 instance=ExtResource("11_wvr33")]
-position = Vector2(2040, -72)
-
-[node name="falling_ice5" parent="ice blocks" unique_id=1210609075 instance=ExtResource("11_wvr33")]
-position = Vector2(2304, -40)
-
 [node name="falling_ice17" parent="ice blocks" unique_id=774195823 instance=ExtResource("11_wvr33")]
-position = Vector2(3489.5347, 310.0603)
+position = Vector2(3326, 358)
 metadata/_scene_painted = true
 
 [node name="falling_ice18" parent="ice blocks" unique_id=298107315 instance=ExtResource("11_wvr33")]
-position = Vector2(3680, 264)
+position = Vector2(3480, 358)
 metadata/_scene_painted = true
 
 [node name="falling_ice19" parent="ice blocks" unique_id=21811713 instance=ExtResource("11_wvr33")]
-position = Vector2(4032, 352)
+position = Vector2(3785, 359)
 metadata/_scene_painted = true
 
 [node name="Water" parent="." unique_id=1820346158 instance=ExtResource("12_sgm4o")]
@@ -309,10 +259,13 @@ position = Vector2(-104, 104)
 [node name="jets" type="Node2D" parent="." unique_id=1769879537]
 
 [node name="air_jet" parent="jets" unique_id=1730613449 instance=ExtResource("7_xbcdb")]
-position = Vector2(528, 168)
+position = Vector2(464, 179)
 
 [node name="air_jet2" parent="jets" unique_id=1710810865 instance=ExtResource("7_xbcdb")]
-position = Vector2(2664, 224)
+position = Vector2(2612, 210)
 
 [node name="falling_ice2" parent="." unique_id=877336612 instance=ExtResource("11_wvr33")]
-position = Vector2(4751, 178)
+position = Vector2(4190, 149)
+
+[node name="falling_ice3" parent="." unique_id=352053130 instance=ExtResource("11_wvr33")]
+position = Vector2(4322, 144)
