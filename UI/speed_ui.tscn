@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://bk2ur3o2hajis"]
 
 [ext_resource type="FontFile" uid="uid://cu2d1j43uocel" path="res://fonts/nes_cyrillic.ttf" id="1_3eo5a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxwf3"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt41o"]
-bg_color = Color(1, 1, 0, 1)
+[ext_resource type="Texture2D" uid="uid://crlh5cqt35g8b" path="res://textures/meter_empty.png" id="1_v1m3g"]
+[ext_resource type="Texture2D" uid="uid://cv5hw43knu7sy" path="res://textures/meter.png" id="2_2pq42"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6troj"]
 font = ExtResource("1_3eo5a")
@@ -20,22 +16,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SpeedBar" type="ProgressBar" parent="." unique_id=27294379]
+[node name="SpeedBar" type="TextureProgressBar" parent="." unique_id=1504214346]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -12.0
-offset_right = 44.0
+offset_left = -72.0
+offset_top = -20.0
+offset_right = 216.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_rxwf3")
-theme_override_styles/fill = SubResource("StyleBoxFlat_rt41o")
+scale = Vector2(0.49, 0.49)
 max_value = 350.0
-show_percentage = false
+value = 100.0
+texture_under = ExtResource("1_v1m3g")
+texture_progress = ExtResource("2_2pq42")
 
 [node name="Label" type="Label" parent="." unique_id=1323199957]
 layout_mode = 0

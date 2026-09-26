@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cvw3h3ec1dr63" path="res://Objects/falling_ice.gd" id="1_oyhek"]
 [ext_resource type="Texture2D" uid="uid://ptqa48js87nw" path="res://textures/ice_block.png" id="2_njt4x"]
+[ext_resource type="Texture2D" uid="uid://cy2dlol8f0y3p" path="res://textures/fallingiceexplosion_spritesheet.png" id="3_5ne7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbcdb"]
-size = Vector2(30, 8)
+size = Vector2(32, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyhek"]
 size = Vector2(31, 9)
@@ -12,20 +13,64 @@ size = Vector2(31, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l47pf"]
 size = Vector2(32, 8)
 
-[node name="falling_ice" type="StaticBody2D" unique_id=871054556]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v76l4"]
+atlas = ExtResource("3_5ne7p")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b7g0"]
+atlas = ExtResource("3_5ne7p")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ukr"]
+atlas = ExtResource("3_5ne7p")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isx5h"]
+atlas = ExtResource("3_5ne7p")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaspt"]
+atlas = ExtResource("3_5ne7p")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sahw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v76l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b7g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ukr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isx5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaspt")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="falling_ice" type="AnimatableBody2D" unique_id=1932595543]
 collision_layer = 4
 script = ExtResource("1_oyhek")
 
 [node name="detector" type="Area2D" parent="." unique_id=265621814]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detector" unique_id=1765063203]
-position = Vector2(-1, 0)
+z_index = 1
 shape = SubResource("RectangleShape2D_xbcdb")
+debug_color = Color(0.98894256, 0, 0.30154946, 0.41960785)
 
-[node name="is on floor" type="Area2D" parent="." unique_id=975211377]
+[node name="floor_collider" type="Area2D" parent="." unique_id=975211377]
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="is on floor" unique_id=179272257]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_collider" unique_id=179272257]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_oyhek")
 
@@ -35,5 +80,9 @@ shape = SubResource("RectangleShape2D_l47pf")
 [node name="image" type="Sprite2D" parent="." unique_id=1057133199]
 texture = ExtResource("2_njt4x")
 
-[connection signal="body_entered" from="detector" to="." method="_on_detecor_body_entered"]
-[connection signal="body_exited" from="is on floor" to="." method="_on_is_on_floor_body_exited"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1522317025]
+visible = false
+sprite_frames = SubResource("SpriteFrames_0sahw")
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_entered" from="floor_collider" to="." method="_on_floor_collider_body_entered"]

@@ -1,22 +1,21 @@
-extends StaticBody2D
+extends AnimatableBody2D
 
-@export var fall_speed: float = 100.0
+@export var fall_speed: float = 1000.0
 
 var is_falling: bool = false
 
-func _ready() -> void:
-	# Clean up signal connections via code
-	$detector.body_entered.connect(_on_detector_body_entered)
-	$"is on floor".body_entered.connect(_on_floor_collider_body_entered)
 
 func _physics_process(delta: float) -> void:
 	if is_falling:
 		position.y += fall_speed * delta
 
-func _on_detector_body_entered(body: Node2D) -> void:
+func _on_detector_body_entered(body: CharacterBody2D) -> void:
 	# This 'is Player' check relies on 'class_name Player' being at the top of player.gd!
-	if body is Player and not is_falling:
-		is_falling = true
+	if body is Player:
+		$image.hide()
+		$AnimatedSprite2D.show()
+		$AnimatedSprite2D.play("default")
+		await get_tree().create_timer(0.5).timeout
 
 func _on_floor_collider_body_entered(body: Node2D) -> void:
 	# 1. SAFETY: If the area is detecting its own parent body, do nothing!
