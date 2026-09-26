@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="falling_ice" type="AnimatableBody2D" unique_id=1932595543]
@@ -83,6 +83,8 @@ texture = ExtResource("2_njt4x")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1522317025]
 visible = false
 sprite_frames = SubResource("SpriteFrames_0sahw")
+frame = 4
+frame_progress = 1.0
 
 [connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_entered" from="floor_collider" to="." method="_on_floor_collider_body_entered"]
