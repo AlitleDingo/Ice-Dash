@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://byalcwxdyg4p4"]
+
+[ext_resource type="LabelSettings" uid="uid://c3xi0gmtf15ps" path="res://fonts/Menu_Label.tres" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://cdxlxihilpuy2" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="FontFile" uid="uid://cu2d1j43uocel" path="res://fonts/nes_cyrillic.ttf" id="3_mae5d"]
+[ext_resource type="AudioStream" uid="uid://65bt4dvqtcv6" path="res://audio/curser_move.mp3" id="4_4hy44"]
+[ext_resource type="AudioStream" uid="uid://cxgjoffu5xsv" path="res://audio/enter_menu.mp3" id="5_ytr4m"]
+[ext_resource type="AudioStream" uid="uid://4q7webjxd1y8" path="res://audio/8Bit Title Screen.mp3" id="6_l48gv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hy44"]
+font = ExtResource("3_mae5d")
+
+[node name="Menu" type="Control" unique_id=1185728411]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+
+[node name="background" type="ColorRect" parent="." unique_id=111308143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="tiatl" type="Label" parent="." unique_id=995625674]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.5
+offset_top = 9.0
+offset_right = 83.5
+offset_bottom = 36.0
+grow_horizontal = 2
+text = "Select a option and 
+press space to start it"
+label_settings = ExtResource("1_lti8b")
+
+[node name="menu_options" type="VBoxContainer" parent="." unique_id=1557945209]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -22.0
+offset_right = 27.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_1" type="Label" parent="menu_options" unique_id=1945413005]
+layout_mode = 2
+text = "Level 1"
+label_settings = ExtResource("1_lti8b")
+
+[node name="level_2" type="Label" parent="menu_options" unique_id=201086267]
+layout_mode = 2
+text = "Level 2"
+label_settings = ExtResource("1_lti8b")
+
+[node name="level_3" type="Label" parent="menu_options" unique_id=1702102125]
+layout_mode = 2
+text = "Level 3"
+label_settings = ExtResource("1_lti8b")
+
+[node name="Quit Game" type="Label" parent="menu_options" unique_id=21836799]
+layout_mode = 2
+text = "Quit Game"
+label_settings = ExtResource("1_lti8b")
+
+[node name="howtoplay" type="Label" parent="menu_options" unique_id=1382100261]
+layout_mode = 2
+text = "How to play"
+label_settings = ExtResource("1_lti8b")
+horizontal_alignment = 1
+
+[node name="Best_time" type="Label" parent="." unique_id=387773260]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 64.0
+label_settings = SubResource("LabelSettings_4hy44")
+
+[node name="curser_move" type="AudioStreamPlayer2D" parent="." unique_id=255804686]
+stream = ExtResource("4_4hy44")
+attenuation = 1e-05
+
+[node name="select" type="AudioStreamPlayer2D" parent="." unique_id=1747103565]
+stream = ExtResource("5_ytr4m")
+volume_db = 10.0
+attenuation = 1e-05
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1439390614]
+stream = ExtResource("6_l48gv")
+volume_db = -2.496
+autoplay = true

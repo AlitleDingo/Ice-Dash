@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://is7px7egakc1"]
+
+[ext_resource type="Texture2D" uid="uid://bf03l2pvdebhs" path="res://Layers/sky.png" id="1_bpugw"]
+[ext_resource type="Script" uid="uid://wdwk8nv5dd4b" path="res://background.gd" id="1_gjjrj"]
+[ext_resource type="Texture2D" uid="uid://dehdd08li485" path="res://Layers/clouds_bg.png" id="2_gjjrj"]
+[ext_resource type="Texture2D" uid="uid://csibpm3ohxv41" path="res://Layers/clouds_mg_3.png" id="3_vvxqx"]
+[ext_resource type="Texture2D" uid="uid://dnh0qu5pcajaw" path="res://Layers/clouds_mg_2.png" id="4_cdpnt"]
+[ext_resource type="Texture2D" uid="uid://cdl3hjsau7qtr" path="res://Layers/clouds_mg_1.png" id="5_8u6ia"]
+[ext_resource type="Texture2D" uid="uid://rdl6m2a8w5yx" path="res://Layers/glacial_mountains.png" id="6_6i7po"]
+
+[node name="background" type="Node2D" unique_id=1133651584]
+z_index = -2
+script = ExtResource("1_gjjrj")
+shift_time = 5.0
+night_time_color = Color(0.16665071, 0, 0.93841285, 1)
+
+[node name="sky" type="Parallax2D" parent="." unique_id=1689903544]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="sky" type="Sprite2D" parent="sky" unique_id=1426736998]
+position = Vector2(-64, 3)
+texture = ExtResource("1_bpugw")
+region_rect = Rect2(0, 0, 2000, 0)
+
+[node name="clouds_bg" type="Parallax2D" parent="." unique_id=644342705]
+texture_repeat = 2
+scroll_scale = Vector2(0.05, 0.05)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="clouds_bg" type="Sprite2D" parent="clouds_bg" unique_id=93623531]
+texture = ExtResource("2_gjjrj")
+region_rect = Rect2(0, 0, 2000, 0)
+
+[node name="clouds_mg_3" type="Parallax2D" parent="." unique_id=1028654012]
+texture_repeat = 2
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="clouds_mg_3" type="Sprite2D" parent="clouds_mg_3" unique_id=38833256]
+texture = ExtResource("3_vvxqx")
+region_rect = Rect2(0, 0, 2000, 0)
+
+[node name="clouds_mg_2" type="Parallax2D" parent="." unique_id=2140460572]
+texture_repeat = 2
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="clounds_mg_2" type="Sprite2D" parent="clouds_mg_2" unique_id=484744925]
+texture = ExtResource("4_cdpnt")
+region_rect = Rect2(0, 0, 2000, 0)
+
+[node name="clouds_mg_1" type="Parallax2D" parent="." unique_id=1809461192]
+texture_repeat = 2
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="clounds_mg_1" type="Sprite2D" parent="clouds_mg_1" unique_id=390253724]
+texture = ExtResource("5_8u6ia")
+region_rect = Rect2(0, 0, 2000, 0)
+
+[node name="mountains" type="Parallax2D" parent="." unique_id=1499887751]
+scroll_scale = Vector2(0.35, 0.35)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="glacial_mountains" type="Sprite2D" parent="mountains" unique_id=2018920047]
+position = Vector2(0, 24)
+texture = ExtResource("6_6i7po")
+region_rect = Rect2(0, 0, 4000, 0)
+
+[node name="below themountains" type="Parallax2D" parent="." unique_id=1287762384]
+scroll_scale = Vector2(0.35, 0.35)
+repeat_size = Vector2(384, 0)
+repeat_times = 5
+
+[node name="glacial_mountains" type="Sprite2D" parent="below themountains" unique_id=1699307347]
+z_index = -1
+position = Vector2(-24, 96)
+texture = ExtResource("6_6i7po")
+region_rect = Rect2(0, 0, 4000, 0)

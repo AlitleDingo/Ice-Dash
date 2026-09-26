@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bvmgyxaaehuri"]
+
+[ext_resource type="Script" uid="uid://cd7xj4bgvthtv" path="res://panel_container.gd" id="1_ucuyg"]
+[ext_resource type="FontFile" uid="uid://cu2d1j43uocel" path="res://fonts/nes_cyrillic.ttf" id="2_qu36y"]
+[ext_resource type="AudioStream" uid="uid://65bt4dvqtcv6" path="res://audio/curser_move.mp3" id="3_v7fcu"]
+[ext_resource type="AudioStream" uid="uid://cxgjoffu5xsv" path="res://audio/enter_menu.mp3" id="4_ifua1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_27bay"]
+font = ExtResource("2_qu36y")
+font_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1827439427]
+process_mode = 3
+script = ExtResource("1_ucuyg")
+
+[node name="pause_menu_ui" type="Control" parent="." unique_id=1439665683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu_ui" unique_id=1920659429]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -84.0
+offset_right = 152.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="back" type="Label" parent="pause_menu_ui/VBoxContainer" unique_id=1538486185]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Back"
+label_settings = SubResource("LabelSettings_27bay")
+
+[node name="Restart" type="Label" parent="pause_menu_ui/VBoxContainer" unique_id=903747356]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Restart"
+label_settings = SubResource("LabelSettings_27bay")
+
+[node name="Exit_to_menu" type="Label" parent="pause_menu_ui/VBoxContainer" unique_id=501971940]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Exit to menu"
+label_settings = SubResource("LabelSettings_27bay")
+
+[node name="banner" type="Label" parent="pause_menu_ui" unique_id=1267748090]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 197.0
+offset_bottom = 44.0
+size_flags_horizontal = 4
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_27bay")
+horizontal_alignment = 1
+
+[node name="move_curser" type="AudioStreamPlayer2D" parent="." unique_id=1986283969]
+stream = ExtResource("3_v7fcu")
+
+[node name="enter_menu" type="AudioStreamPlayer2D" parent="." unique_id=1358579648]
+stream = ExtResource("4_ifua1")
+volume_db = 5.0
+attenuation = 1e-05

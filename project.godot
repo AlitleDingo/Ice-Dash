@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ice runner"
+config/tags=PackedStringArray("2d")
+run/main_scene="uid://c24xsod5wo7td"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.45490196, 0.5411765, 0.84313726, 0.61960787)
+boot_splash/image="uid://c16fliwcrlbo6"
+config/icon="uid://c16fliwcrlbo6"
+config/windows_native_icon="res://icons/convertico-Gemini_Generated_Image_inxc7xinxc7xinxc.ico"
+
+[autoload]
+
+Globals="*uid://c0xybbpo74ly3"
+GxGames="*uid://cejf2wfbtp04w"
+Highscoremaniger="*uid://dkrmsar02wfj1"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Ryker/Desktop/test1.ogv"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/opera_sdk/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

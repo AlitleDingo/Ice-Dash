@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://c24xsod5wo7td"]
+
+[ext_resource type="Script" uid="uid://xxp0y2o2305q" path="res://start_screen.gd" id="1_k1na2"]
+[ext_resource type="FontFile" uid="uid://cenj1wk4g5m5r" path="res://fonts/bitmap_middle_font.ttf" id="1_pevhg"]
+[ext_resource type="FontFile" uid="uid://cu2d1j43uocel" path="res://fonts/nes_cyrillic.ttf" id="2_afy8x"]
+[ext_resource type="AudioStream" uid="uid://ctlxumyquup14" path="res://audio/load menu.mp3" id="4_k1na2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k1na2"]
+font = ExtResource("1_pevhg")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdywr"]
+font = ExtResource("2_afy8x")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdgt5"]
+font = ExtResource("2_afy8x")
+
+[node name="Start_screen" type="Control" unique_id=1638461876]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1na2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=199623415]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Tital" type="Label" parent="." unique_id=508275359]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_right = 122.0
+offset_bottom = 56.0
+grow_horizontal = 2
+text = "Penguin Dash"
+label_settings = SubResource("LabelSettings_k1na2")
+
+[node name="Story" type="Label" parent="." unique_id=1319182912]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -12.0
+offset_right = 120.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The migration has left without you. The brutal polar winter is closing in, freezing everything in its path. Your only chance of survival is to run, slide, and leap across the treacherous ice to catch up with your family. Can you outrun the freeze?"
+label_settings = SubResource("LabelSettings_vdywr")
+autowrap_mode = 3
+
+[node name="continue" type="Label" parent="." unique_id=1878493971]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.5
+offset_top = -35.0
+offset_right = 91.5
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press space to continue"
+label_settings = SubResource("LabelSettings_cdgt5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1839057966]
+stream = ExtResource("4_k1na2")
+volume_db = 5.0
+autoplay = true
+attenuation = 1e-05
