@@ -22,11 +22,6 @@ var is_timer_running: bool = true
 
 func _ready() -> void:
 	player.level_finished.connect(finish_level)
-	
-	print("Current Level Index: ", level_index, " | Loading Track: ", level_music_path)
-	
-	if level_music_path != "" and level_music_path != null:
-		Globals.play_level_music(level_music_path)
 
 func _process(_delta: float) -> void:
 	# Tick the speedrun timer upward every frame while the level is active
@@ -43,7 +38,6 @@ func _process(_delta: float) -> void:
 
 
 func finish_level() -> void:
-	print("you win")
 	is_timer_running = false
 	
 	# Freeze physics processing on the player so they stop moving during the victory screen
@@ -80,7 +74,6 @@ func finish_level() -> void:
 	# Reveal the victory popup screen. The player can now review their score or hit continue!
 	victory_screen.show()
 
-func _input(event):
+func _input(_event):
 	if $VictoryScreen.visible and Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://UI/menu.tscn")
-		Globals.stop_music()

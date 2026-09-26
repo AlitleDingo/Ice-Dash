@@ -80,6 +80,5 @@ func handle_pause_selection():
 			get_tree().reload_current_scene()
 		2: # "Exit_to_menu"
 			get_tree().paused = false
-			Globals.stop_music()
 			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_file("res://UI/menu.tscn")

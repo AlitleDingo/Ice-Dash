@@ -20,7 +20,7 @@ signal level_finished()
 @export var unjump_force = 25
 @export var air_jump_speed_reduce = 1500
 @export var coyote_time_amount: float = 0.20
-@export var air_boost_amount: int = 600
+@export var air_boost_amount: float = 600
 
 @export_category("Friction")
 @export var friction = 200
@@ -243,8 +243,7 @@ func _process_death_sequence(delta: float) -> void:
 		
 		# Shift scenes once character clears the lower framing limits plus margin
 		if global_position.y > screen_bottom + 64:
-			Globals.stop_music()
-			get_tree().change_scene_to_file("res://menu.tscn")
+			get_tree().change_scene_to_file("res://UI/menu.tscn")
 			
 			
 func recive_gems(delta):
@@ -256,9 +255,7 @@ func trigger_wall_crash() -> void:
 	if is_dead:
 		return
 	is_dead = true
-	
-	print("Player crashed into a steep obstacle!")
-	
+
 	# Stop the penguin from processing any more inputs or movement loops
 	set_deferred("process_mode", PROCESS_MODE_DISABLED)
 	
@@ -267,7 +264,6 @@ func trigger_wall_crash() -> void:
 		get_parent().is_timer_running = false
 		
 	# Cleanly fade out the music exactly once
-	Globals.stop_music()
 	
 	# Optional: You can make the penguin flash red or play a crash animation here!
 	sprite_2d.modulate = Color(1, 0, 0) 
@@ -280,5 +276,4 @@ func air_boost(delta):
 	if Globals.air_boost:
 		velocity.y -= air_boost_amount * delta
 		velocity.x += air_boost_amount/1000
-		print("boosted")
 		Globals.air_boost = false
